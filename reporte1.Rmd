@@ -1,5 +1,5 @@
 ---
-title: "Reporte1"
+title: "Analizando la capacidad presupuestal de las municipalidades"
 author: "Arturo Chian"
 date: "18/4/2020"
 output: html_document
@@ -9,22 +9,44 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Resumen
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+ASDKASÑLD
 
 ```{r cars}
-summary(cars)
+library(stringi)
+library(ggplot2)
+library(dplyr)
+library (DT)
+municipalidades<-read.csv("https://raw.githubusercontent.com/BESTDATASCIENCE/manos-a-la-data/master/data/2020/2020-03-04/municipalidades.csv")
+
+
+municipalidades2 <- municipalidades %>% filter(PROVINCIA=="MUNICIPALIDAD METROPOLITANA DE LIMA")
+municipalidades2 <- municipalidades %>% filter(PROVINCIA=="MUNICIPALIDAD PROVINCIAL DE BARRANCA")
+municipalidades2 <- municipalidades %>% filter(PROVINCIA=="150301-301299: MUNICIPALIDAD PROVINCIAL DE CAJATAMBO")
+municipalidades2 <- municipalidades %>% filter(PROVINCIA=="150401-301304: MUNICIPALIDAD PROVINCIAL DE CANTA")
+municipalidades2 <- municipalidades %>% filter(PROVINCIA=="150501-301311: MUNICIPALIDAD PROVINCIAL DE CAÑETE - SAN VICENTE DE CAÑETE")
+municipalidades2 <- municipalidades %>% filter(PROVINCIA=="150601-301327: MUNICIPALIDAD PROVINCIAL DE HUARAL")
+municipalidades2 <- municipalidades %>% filter(PROVINCIA=="150701-301339: MUNICIPALIDAD PROVINCIAL DE HUAROCHIRI - MATUCANA")
+municipalidades2 <- municipalidades %>% filter(PROVINCIA=="150801-301371: MUNICIPALIDAD PROVINCIAL DE HUAURA")
+municipalidades2 <- municipalidades %>% filter(PROVINCIA=="150901-301383: MUNICIPALIDAD PROVINCIAL DE OYON")
+municipalidades2 <- municipalidades %>% filter(PROVINCIA=="151001-301389: MUNICIPALIDAD PROVINCIAL DE YAUYOS")
+
+p5 <- ggplot(municipalidades2, aes(x = periodo, y = avance))
+  
 ```
 
-## Including Plots
+## Gráfico general
 
 You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
-plot(pressure)
+ggplot(data = municipalidades2) +
+  geom_boxplot(mapping = aes(x = reorder(Municipalidad, avance, FUN = median), y = avance)) +
+  coord_flip() +labs(title = "Avance presupuestal", subtitle = "Histórico 2007-2019",caption = "Fuente: Consulta Amigable",
+                     x="Municipalidades", y="Avance presupuestal (%)")
+
+
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
