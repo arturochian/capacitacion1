@@ -1,5 +1,5 @@
 # Cargando paquetes
-
+# install.packages("ggplot2")
 library(stringi)
 library(ggplot2)
 library(dplyr)
