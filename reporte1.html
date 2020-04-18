@@ -372,33 +372,6 @@ summary {
 <div id="resumen" class="section level2">
 <h2>Resumen</h2>
 <p>ASDKASÑLD</p>
-<pre class="r"><code>library(stringi)
-library(ggplot2)
-library(dplyr)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;dplyr&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>library (DT)
-municipalidades&lt;-read.csv(&quot;https://raw.githubusercontent.com/BESTDATASCIENCE/manos-a-la-data/master/data/2020/2020-03-04/municipalidades.csv&quot;)
-
-
-municipalidades2 &lt;- municipalidades %&gt;% filter(PROVINCIA==&quot;MUNICIPALIDAD METROPOLITANA DE LIMA&quot;)
-municipalidades2 &lt;- municipalidades %&gt;% filter(PROVINCIA==&quot;MUNICIPALIDAD PROVINCIAL DE BARRANCA&quot;)
-municipalidades2 &lt;- municipalidades %&gt;% filter(PROVINCIA==&quot;150301-301299: MUNICIPALIDAD PROVINCIAL DE CAJATAMBO&quot;)
-municipalidades2 &lt;- municipalidades %&gt;% filter(PROVINCIA==&quot;150401-301304: MUNICIPALIDAD PROVINCIAL DE CANTA&quot;)
-municipalidades2 &lt;- municipalidades %&gt;% filter(PROVINCIA==&quot;150501-301311: MUNICIPALIDAD PROVINCIAL DE CAÑETE - SAN VICENTE DE CAÑETE&quot;)
-municipalidades2 &lt;- municipalidades %&gt;% filter(PROVINCIA==&quot;150601-301327: MUNICIPALIDAD PROVINCIAL DE HUARAL&quot;)
-municipalidades2 &lt;- municipalidades %&gt;% filter(PROVINCIA==&quot;150701-301339: MUNICIPALIDAD PROVINCIAL DE HUAROCHIRI - MATUCANA&quot;)
-municipalidades2 &lt;- municipalidades %&gt;% filter(PROVINCIA==&quot;150801-301371: MUNICIPALIDAD PROVINCIAL DE HUAURA&quot;)
-municipalidades2 &lt;- municipalidades %&gt;% filter(PROVINCIA==&quot;150901-301383: MUNICIPALIDAD PROVINCIAL DE OYON&quot;)
-municipalidades2 &lt;- municipalidades %&gt;% filter(PROVINCIA==&quot;151001-301389: MUNICIPALIDAD PROVINCIAL DE YAUYOS&quot;)
-
-p5 &lt;- ggplot(municipalidades2, aes(x = periodo, y = avance))</code></pre>
 </div>
 <div id="gráfico-general" class="section level2">
 <h2>Gráfico general</h2>

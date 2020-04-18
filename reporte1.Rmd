@@ -11,9 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Resumen
 
-ASDKASÑLD
 
-```{r cars}
+
+```{r cars,message=FALSE,echo=FALSE}
 library(stringi)
 library(ggplot2)
 library(dplyr)
@@ -33,7 +33,7 @@ municipalidades2 <- municipalidades %>% filter(PROVINCIA=="150901-301383: MUNICI
 municipalidades2 <- municipalidades %>% filter(PROVINCIA=="151001-301389: MUNICIPALIDAD PROVINCIAL DE YAUYOS")
 
 p5 <- ggplot(municipalidades2, aes(x = periodo, y = avance))
-  
+
 ```
 
 ## Gráfico general
