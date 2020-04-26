@@ -1,0 +1,12 @@
+base
+methods
+emo
+datasets
+utils
+grDevices
+graphics
+stats
+stringi
+ggplot2
+dplyr
+DT
